@@ -1,0 +1,50 @@
+.card {
+  width: calc((100% / 4) - 20px);
+  background: #2193b0;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #6dd5ed, #2193b0);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #6dd5ed, #2193b0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  
+  aspect-ratio: 3/4;
+  border-radius: 8px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 8px solid lightblue;
+
+  font-family: "Chewy", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: xx-large;
+
+  color: aliceblue;
+  
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card.covered {
+  background: linear-gradient(to right, #6dd5ed, #2193b0);
+}
+
+.card.covered img {
+  display: none !important;
+}
+
+.card:not(.covered) {
+  background: white;
+  color: transparent;
+}
+
+.card:not(.covered) img {
+  display: block !important;
+  position: absolute;
+}
