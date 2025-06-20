@@ -1,14 +1,15 @@
 .card {
   width: calc((100% / 4) - 20px);
   background: #2193b0;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #6dd5ed, #2193b0);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #6dd5ed, #2193b0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: -webkit-linear-gradient(to right, #6dd5ed, #2193b0);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #6dd5ed, #2193b0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   
   aspect-ratio: 3/4;
   border-radius: 8px;
   
   display: flex;
+  position: relative;
   align-items: center;
   justify-content: center;
 
@@ -23,7 +24,6 @@ background: linear-gradient(to right, #6dd5ed, #2193b0); /* W3C, IE 10+/ Edge, F
   
   cursor: pointer;
   transition: transform 0.3s ease;
-  position: relative;
   overflow: hidden;
 }
 
@@ -47,4 +47,10 @@ background: linear-gradient(to right, #6dd5ed, #2193b0); /* W3C, IE 10+/ Edge, F
 .card:not(.covered) img {
   display: block !important;
   position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
 }
