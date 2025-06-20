@@ -9,13 +9,16 @@ let grid = document.querySelector(".card-grid")
 addEventListener("DOMContentLoaded", (event) => {
   for(i = 0; i <= 24; i++) {
     let card = document.createElement("div")
+    card.innerHTML = "Memory";
     card.classList.add("card");
+    card.classList.add("covered");
+    getData(card);
     grid.append(card);
   };
 })
 
 
-async function getData() {
+async function getData(card) {
   const url = "https://api.thecatapi.com/v1/images/search";
   try {
     const response = await fetch(url);
@@ -25,6 +28,11 @@ async function getData() {
 
     const json = await response.json();
     console.log(json);
+
+    let img = document.createElement("img");
+    img.src = json[0].url;
+    card.append(img);
+
   } catch (error) {
     console.error(error.message);
   }
